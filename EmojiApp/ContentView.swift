@@ -6,20 +6,34 @@
 //
 
 import SwiftUI
-
-enum Emoji: String {
-    case 🦊,🐸,🐝,🦁,🐼
+enum Emoji: String , CaseIterable {
+    case 🐸,🦊,🍯🐝,🐨,🐢
+    
 }
 
 struct ContentView: View {
-    var selection: Emoji = .🐸
-    
+    @State var selection: Emoji = .🐸
+
     var body: some View {
-        Text(selection.rawValue).font(.system(size: 150))
+        NavigationView{VStack {
+            Text(selection.rawValue)
+                .font(.system(size: 200))
+            
+            Picker("Select Emoji", selection: $selection) {
+                ForEach(Emoji.allCases, id: \.self) { Emoji in
+                    Text(Emoji.rawValue)
+                }
+            }
+            .pickerStyle(.segmented)
+        }
+        .navigationTitle("Animals!")
+        }.padding()
     }
 }
 
-#Preview {
-    ContentView()
+struct ContentView_previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
 }
  
