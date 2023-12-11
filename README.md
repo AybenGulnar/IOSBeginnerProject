@@ -1,12 +1,13 @@
--EmojiApp
+EmojiApp
+
 EmojiApp is a simple SwiftUI application where users can select their favorite animal emojis. The app utilizes a Picker with a range of emoji options, and the selected emoji is displayed prominently as large text. 
 
--Requirements
+Requirements
 
 Developed using SwiftUI and the Swift programming language.
 Works on iOS 14 and later versions.
 
--How to Run
+How to Run
 To run the EmojiApp on your local environment, follow these steps:
 
 Clone the repository: git clone https://github.com/aybenglnr/EmojiApp.git
